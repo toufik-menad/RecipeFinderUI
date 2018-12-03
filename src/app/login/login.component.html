@@ -1,0 +1,12 @@
+<form id="loginForm" #f="ngForm" (ngSubmit)="getToken(f.value)">
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" name="username" ngModel required #username="ngModel">
+    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Password</label>
+    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" ngModel required #password="ngModel">
+  </div>
+  <button type="submit" id="submit" class="btn btn-primary" (click)="closeLoginForm();getToken()">Sign in</button>
+</form>
