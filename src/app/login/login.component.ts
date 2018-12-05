@@ -6,6 +6,8 @@ import { JwtHelperService } from '@auth0/angular-jwt';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClient } from '@angular/common/http';
 import { AuthenticationService } from '../services/AuthenticationService';
+import { ShareUserService } from '../DataShareServices/ShareUserService';
+import { User } from '../Models/User';
 
 
 @Component({
@@ -15,27 +17,39 @@ import { AuthenticationService } from '../services/AuthenticationService';
 })
 export class LoginComponent implements OnInit {
 
-  constructor(private dialogRef: MatDialogRef<LoginComponent>, private autherticationService: AuthenticationService) { }
+  userEntity: User = new User();
+
+  constructor(private dialogRef: MatDialogRef<LoginComponent>, private autherticationService: AuthenticationService, private shareUserService: ShareUserService) { }
 
   ngOnInit() {
+
   }
 
-  async getToken(user) {
+  async getToken(userData) {
     jwt: String;
-    await this.autherticationService.login(user).subscribe(
+    await this.autherticationService.login(userData).subscribe(
       response => {
         console.log("sucess ...");
-        let jwt = response.headers.get("Authorization")
+        let jwt = response.headers.get("Authorization");
+        if (response.status == 200) {
+          this.userEntity.username = userData.username;
+        }
         console.log(jwt);
-        localStorage.setItem("token",jwt);
+        localStorage.setItem("token", jwt);
         console.log(localStorage.getItem("token"));
+        this.shareUserService.changeMessage(this.userEntity.username);
+
+
       },
       error => {
 
-        console.log("failure ...")
+        this.userEntity.username = "...";
+        this.shareUserService.changeMessage(this.userEntity.username);
+        console.log("failure ...");
       }
     );
-    console.log(user);
+
+    console.log(userData);
   }
 
   closeLoginForm() {

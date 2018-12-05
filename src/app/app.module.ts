@@ -11,6 +11,9 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AuthenticationService } from './services/AuthenticationService';
+import { LoginDropDownComponent } from './login-drop-down/login-drop-down.component';
+import { ShareUserService } from './DataShareServices/ShareUserService';
+import { User } from './Models/User';
 
 @NgModule({
   declarations: [
@@ -18,7 +21,8 @@ import { AuthenticationService } from './services/AuthenticationService';
     HeaderComponent,
     SearchbarComponent,
     RecipeComponent,
-    LoginComponent
+    LoginComponent,
+    LoginDropDownComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +32,7 @@ import { AuthenticationService } from './services/AuthenticationService';
     JwtModule,
     FormsModule
   ],
-  providers: [AuthenticationService],
+  providers: [AuthenticationService,ShareUserService,User],
   bootstrap: [AppComponent],
   entryComponents: [LoginComponent]
 })
