@@ -11,7 +11,9 @@ import { JwtModule } from '@auth0/angular-jwt';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { AuthenticationService } from './services/AuthenticationService';
+import { RegistrationService } from './services/registrationService';
 import { LoginDropDownComponent } from './login-drop-down/login-drop-down.component';
+import { RegistrationComponent } from './registration/registration.component';
 import { ShareUserService } from './DataShareServices/ShareUserService';
 import { User } from './Models/User';
 
@@ -22,7 +24,8 @@ import { User } from './Models/User';
     SearchbarComponent,
     RecipeComponent,
     LoginComponent,
-    LoginDropDownComponent
+    LoginDropDownComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
@@ -32,8 +35,8 @@ import { User } from './Models/User';
     JwtModule,
     FormsModule
   ],
-  providers: [AuthenticationService,ShareUserService,User],
+  providers: [AuthenticationService,ShareUserService,User,RegistrationService],
   bootstrap: [AppComponent],
-  entryComponents: [LoginComponent]
+  entryComponents: [LoginComponent, RegistrationComponent]
 })
 export class AppModule { }

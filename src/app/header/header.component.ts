@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig, MatDialogRef } from '@angular/material';
 import { LoginComponent } from '../login/login.component';
+import { RegistrationComponent } from '../registration/registration.component';
 
 
 @Component({
@@ -28,6 +29,18 @@ export class HeaderComponent implements OnInit {
     console.log("openlogin function ....")
     
 
+  }
+
+  singUp(){
+    const config = new MatDialogConfig();
+    config.disableClose= false;
+    config.autoFocus=true;
+    config.hasBackdrop=true;
+    config.width = "400px";
+    config.height="600px";
+    this.dialog.open(RegistrationComponent);
+    console.log("openlogin function ....")
+    console.log("singUp()");
   }
 
 }
