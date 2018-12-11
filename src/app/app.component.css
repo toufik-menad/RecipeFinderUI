@@ -1,0 +1,54 @@
+* {
+    box-sizing:border-box;
+  }
+  
+  .title{
+    background-color: black;
+    opacity:0.85;
+    padding: 30px;
+    float:left;
+    width: 20%;
+    height: 100px /* The width is 20%, by default */
+    
+  }
+
+  .home, .signUp, .login, .user{
+    background-color: black;
+    opacity:0.85;
+    padding: 30px;
+    float:left;
+    width: 12.5%;
+    height: 100px /* The width is 20%, by default */
+    
+  }
+  
+  .searchform{
+    background-color: black;
+    opacity:0.85;
+    width: 30%;
+    float:left;
+    padding: 30px;
+    height: 100px
+    
+  }
+
+
+/* Use a media query to add a break point at 800px: */
+@media screen and (max-width:620px) {
+    .title, .home, .signUp, .login, .user{
+      width:100%; /* The width is 100%, when the viewport is 800px or smaller */
+    }
+  }
+
+  @media screen and (max-width:620px) {
+    .searchform{
+      width:100%; height: 200%/* The width is 100%, when the viewport is 800px or smaller */
+    }
+  }
+
+  @media screen and (min-width:621px) and (max-width:1160px) {
+
+    .title, .home, .signUp, .login, .user, .searchform{
+      height: 120px;width: 16.66%; padding: 5px;
+    }
+  }

@@ -1,7 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
-import { HeaderComponent } from './header/header.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { LoginComponent } from './login/login.component';
@@ -20,7 +19,6 @@ import { User } from './Models/User';
 @NgModule({
   declarations: [
     AppComponent,
-    HeaderComponent,
     SearchbarComponent,
     RecipeComponent,
     LoginComponent,
