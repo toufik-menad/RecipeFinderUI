@@ -19,11 +19,13 @@ export class LoginComponent implements OnInit {
 
   userEntity: User = new User();
 
-  constructor(private dialogRef: MatDialogRef<LoginComponent>, private autherticationService: AuthenticationService, private shareUserService: ShareUserService) { }
-
   ngOnInit() {
 
   }
+
+  constructor(private dialogRef: MatDialogRef<LoginComponent>, private autherticationService: AuthenticationService, private shareUserService: ShareUserService) { }
+
+  
 
   async getToken(userData) {
     jwt: String;

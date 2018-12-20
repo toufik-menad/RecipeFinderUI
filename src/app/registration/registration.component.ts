@@ -36,6 +36,7 @@ export class RegistrationComponent implements OnInit {
         },
         error => {
           //display the appropriate message
+          console.log("handle errors here ..")
 
         }
       );

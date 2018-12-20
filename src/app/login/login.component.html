@@ -1,4 +1,4 @@
-<form id="loginForm" #f="ngForm" (ngSubmit)="getToken(f.value)">
+<form id="loginForm" #f="ngForm">
   <div class="form-group">
     <label for="exampleInputEmail1">Email address</label>
     <input type="text" class="form-control" aria-describedby="emailHelp" placeholder="Enter email" name="username" [(ngModel)]="userEntity.username">
@@ -6,8 +6,8 @@
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Password</label>
-    <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" ngModel required #password="ngModel">
+    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" ngModel required #password="ngModel">
   </div>
-  <button type="submit" id="submit" class="btn btn-primary" (click)="closeLoginForm();getToken()" style="float: left">Sign in</button>
+  <button type="submit" id="submit" class="btn btn-primary" (click)="closeLoginForm();getToken(f.value)" style="float: left">Sign in</button>
   <button type="submit" id="submit" class="btn btn-primary" (click)="closeLoginForm()" style="float: right">Cancel</button>
 </form>
