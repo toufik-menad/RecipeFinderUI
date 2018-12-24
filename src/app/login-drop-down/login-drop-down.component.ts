@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ShareUserService } from '../DataShareServices/ShareUserService';
 
+
 @Component({
   selector: 'app-login-drop-down',
   templateUrl: './login-drop-down.component.html',
@@ -12,11 +13,20 @@ export class LoginDropDownComponent implements OnInit {
 
   constructor(private shareUserService:ShareUserService) {
     this.shareUserService.currentMessage.subscribe(message =>{
+
+      if(message){
       this.username=message;
+      }else{
+        this.username = localStorage.getItem("user");
+      }
     });
    }
 
   ngOnInit() {
+  }
+
+  test(){
+    console.log("test");
   }
 
 }

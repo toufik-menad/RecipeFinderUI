@@ -1,25 +1,37 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {MatDialog, MatDialogConfig} from "@angular/material";
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
+import { ShareUserService } from './DataShareServices/ShareUserService';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent {
+export class AppComponent{
   
   title = 'RecipeFinderUI';
+  show: boolean;
   
-  visible: boolean =true;
-  
-  myFunc(){
-    this.visible=false;
-    console.log("function called");
+
+
+  constructor(private dialog: MatDialog, private shareUserService:ShareUserService) {
+    this.shareUserService.currentUiState.subscribe(message =>{
+      if(message===true){
+        console.log(message);
+        window.location.reload();
+      }
+    })
   }
 
-  constructor(private dialog: MatDialog) {}
+  ngOnInit(){
+    if(localStorage.getItem("user")){
+      this.show=false;
+    }else{
+      this.show=true;
+    }
+  }
 
     openDialog() {
 
@@ -31,8 +43,6 @@ export class AppComponent {
         //this.dialog.open(LoginComponent, dialogConfig);
     }
 
-  ngOnInit(){
-  }
 
   singUp(){
     const config = new MatDialogConfig();
@@ -47,6 +57,8 @@ export class AppComponent {
   }
 
   openLogin() {
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
     const config = new MatDialogConfig();
     config.disableClose= false;
     config.autoFocus=true;
@@ -55,6 +67,12 @@ export class AppComponent {
     config.height="600px";
     this.dialog.open(LoginComponent);
     console.log("openlogin function ....")
+  }
+
+  logOut(){
+    localStorage.removeItem("token");
+    localStorage.removeItem("user");
+    window.location.reload();
   }
 
   

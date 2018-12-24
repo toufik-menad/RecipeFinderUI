@@ -4,7 +4,7 @@ import { AppComponent } from './app.component';
 import { SearchbarComponent } from './searchbar/searchbar.component';
 import { RecipeComponent } from './recipe/recipe.component';
 import { LoginComponent } from './login/login.component';
-import { MatDialogModule} from "@angular/material";
+import { MatDialogModule } from "@angular/material";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { JwtModule } from '@auth0/angular-jwt';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,6 +15,16 @@ import { LoginDropDownComponent } from './login-drop-down/login-drop-down.compon
 import { RegistrationComponent } from './registration/registration.component';
 import { ShareUserService } from './DataShareServices/ShareUserService';
 import { User } from './Models/User';
+import { GameComponent } from './game/game.component';
+import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import {
+  MatButtonModule,
+  MatCheckboxModule,
+  MatCardModule,
+  MatProgressSpinnerModule,
+  MatToolbarModule
+} from '@angular/material';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -23,7 +33,9 @@ import { User } from './Models/User';
     RecipeComponent,
     LoginComponent,
     LoginDropDownComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    GameComponent,
+    LoginDropDownComponent
   ],
   imports: [
     BrowserModule,
@@ -31,9 +43,17 @@ import { User } from './Models/User';
     BrowserAnimationsModule,
     HttpClientModule,
     JwtModule,
-    FormsModule
+    FormsModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatCardModule,
+    MatProgressSpinnerModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    AngularFontAwesomeModule,
+    NgbModule.forRoot()
   ],
-  providers: [AuthenticationService,ShareUserService,User,RegistrationService],
+  providers: [AuthenticationService, ShareUserService, User, RegistrationService],
   bootstrap: [AppComponent],
   entryComponents: [LoginComponent, RegistrationComponent]
 })

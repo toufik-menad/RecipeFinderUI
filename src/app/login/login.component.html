@@ -8,6 +8,6 @@
     <label for="exampleInputPassword1">Password</label>
     <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" ngModel required #password="ngModel">
   </div>
-  <button type="submit" id="submit" class="btn btn-primary" (click)="closeLoginForm();getToken(f.value)" style="float: left">Sign in</button>
-  <button type="submit" id="submit" class="btn btn-primary" (click)="closeLoginForm()" style="float: right">Cancel</button>
+  <button type="submit"  class="btn btn-primary" (click)="closeLoginForm();getToken(f.value)" style="float: left">Sign in</button>
+  <button type="submit"  class="btn btn-primary" (click)="closeLoginForm()" style="float: right">Cancel</button>
 </form>

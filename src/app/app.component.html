@@ -1,12 +1,11 @@
-<html lang="en">
+
 
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-  <!--  place components to build up the header  <p style="color: white; font-size: 20px">RecipeFinder</p>-->
-
+  
   <div class="title">
     <p style="color: white">RecipeFinder</p>
   </div>
@@ -19,17 +18,90 @@
   </div>
 
   <div class="home">
-    <a href="#" style="color: white; font-size: 16px">Home</a>
+    <a href="#" style="color: white">Home</a>
   </div>
   <div class="signUp">
-    <a href="#" style="color: white; font-size: 16px" (click)="singUp()">Sign up</a>
+    <a *ngIf="show" href="#" style="color: white" (click)="singUp()">Sign up</a>
+    <app-login-drop-down id="logindropdown" [hidden]="show"></app-login-drop-down>
   </div>
   <div class="login">
-    <a href="#" style="color: white; font-size: 16px" (click)="openLogin()">login</a>
+    <a *ngIf="show" href="#" style="color: white" (click)="openLogin()">login</a>
+    <a [hidden]="show" href="#" style="color: white" (click)="logOut()">log out</a>
   </div>
-  <div class="user">
-    <app-login-drop-down id="logindropdown"></app-login-drop-down>
-  </div>
-</body>
+  <!-- <div class="grid-container"> -->
 
-</html>
+    <!-- <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="/w3images/lights.jpg">
+          <img src="/Users/MENAD/Desktop/Screen Shot 2018-12-21 at 9.06.49 PM.png" alt="Lights" style="width:100%">
+          <div class="caption">
+            <p>Lorem ipsum...</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+        <div class="thumbnail">
+          <a href="/w3images/lights.jpg">
+            <img src="/Users/MENAD/Desktop/Screen Shot 2018-12-21 at 9.06.49 PM.png" alt="Lights" style="width:100%">
+            <div class="caption">
+              <p>Lorem ipsum...</p>
+            </div>
+          </a>
+        </div>
+      </div>
+      <div class="col-md-4">
+          <div class="thumbnail">
+            <a href="/w3images/lights.jpg">
+              <img src="/Users/MENAD/Desktop/Screen Shot 2018-12-21 at 9.06.49 PM.png" alt="Lights" style="width:100%">
+              <div class="caption">
+                <p>Lorem ipsum...</p>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="col-md-4">
+            <div class="thumbnail">
+              <a href="/w3images/lights.jpg">
+                <img src="/Users/MENAD/Desktop/Screen Shot 2018-12-21 at 9.06.49 PM.png" alt="Lights" style="width:100%">
+                <div class="caption">
+                  <p>Lorem ipsum...</p>
+                </div>
+              </a>
+            </div>
+          </div>
+          <div class="col-md-4">
+              <div class="thumbnail">
+                <a href="/w3images/lights.jpg">
+                  <img src="/Users/MENAD/Desktop/Screen Shot 2018-12-21 at 9.06.49 PM.png" alt="Lights" style="width:100%">
+                  <div class="caption">
+                    <p>Lorem ipsum...</p>
+                  </div>
+                </a>
+              </div>
+            </div>
+            <div class="col-md-4">
+                <div class="thumbnail">
+                    <img src="assets/Screen Shot 2018-12-21 at 9.06.49 PM.png" alt="Lights" style="width:100%;height:100%" >
+                    <div class="caption">
+                      <p>Lorem ipsum...</p>
+                    </div>
+                
+                </div>
+              </div>
+    <div class="grid-item">7</div>
+    <div class="grid-item">8</div>
+    <div class="grid-item">9</div>
+    <div class="grid-item">1</div>
+    <div class="grid-item">2</div>
+    <div class="grid-item">3</div>
+    <div class="grid-item">4</div>
+    <div class="grid-item">5</div>
+    <div class="grid-item">6</div>
+    <div class="grid-item">7</div>
+    <div class="grid-item">8</div>
+    <div class="grid-item">9</div>
+  </div> -->
+ 
+</body>

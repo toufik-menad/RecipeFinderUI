@@ -1,0 +1,97 @@
+
+/*=======================================*/
+@media screen and (max-width:320px) {
+    a{
+    width: 50px;
+    height: 20px;
+    font-size: 10px;
+    content: white;
+    border: none;
+    }
+
+    .dropdown-item{
+        width: 50px;
+        height: 20px;
+        font-size: 10px;
+        content: white;
+        border: none;
+        }
+
+    .d-inline-block{
+        align-content: center;
+    }
+  }
+
+  /*=======================================*/
+@media screen and (min-width:320px) and (max-width:360px) {
+    .my-sm-0{
+    width: 80px;
+    height: 50px;
+    font-size: 10px;
+    color: white;
+    border: none;
+    align-content: center;
+    }
+  }
+
+   /*=======================================*/
+@media screen and (min-width:361px) and (max-width:375px) {
+    .my-sm-0{
+    width: 80px;
+    height: 50px;
+    font-size: 10px;
+    color: white;
+    border: none;
+    align-content: center;
+    }
+  }
+
+  /*=======================================*/
+@media screen and (min-width:376px) and (max-width:411px) {
+    .my-sm-0{
+    width: 80px;
+    height: 50px;
+    font-size: 10px;
+    color: white;
+    border: none;
+    align-content: center;
+    }
+  }
+  /*=======================================*/
+@media screen and (min-width:412px) and (max-width:414px) {
+    .my-sm-0{
+    width: 80px;
+    height: 50px;
+    font-size: 10px;
+    color: white;
+    border: none;
+    align-content: center;
+    }
+  }
+
+  /*=======================================*/
+@media screen and (min-width:414px) and (max-width:768px) {
+    .my-sm-0{
+    width: 80px;
+    height: 50px;
+    color: white;
+    float: left;
+    border: none;
+    align-content: left;
+    text-align: left;
+    }
+  }
+
+  /*=======================================*/
+@media screen and (min-width:769px) and (max-width:1024px) {
+    .my-sm-0{
+    width: 80px;
+    height: 50px;
+    color: white;
+    border: none;
+    align-content: center;
+    text-align: center
+    }
+  }
+
+  

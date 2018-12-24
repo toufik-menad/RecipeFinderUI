@@ -38,8 +38,10 @@ export class LoginComponent implements OnInit {
         }
         console.log(jwt);
         localStorage.setItem("token", jwt);
+        localStorage.setItem("user", this.userEntity.username);
         console.log(localStorage.getItem("token"));
         this.shareUserService.changeMessage(this.userEntity.username);
+        this.shareUserService.synchronizeUI(true);
       },
       error => {
         this.userEntity.username = "...";
