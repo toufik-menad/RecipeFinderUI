@@ -1,107 +1,49 @@
-
-
 <head>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
-  
-  <div class="title">
-    <p style="color: white">RecipeFinder</p>
-  </div>
-
-  <div class="searchform">
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
-  </div>
-
-  <div class="home">
-    <a href="#" style="color: white">Home</a>
-  </div>
-  <div class="signUp">
-    <a *ngIf="show" href="#" style="color: white" (click)="singUp()">Sign up</a>
-    <app-login-drop-down id="logindropdown" [hidden]="show"></app-login-drop-down>
-  </div>
-  <div class="login">
-    <a *ngIf="show" href="#" style="color: white" (click)="openLogin()">login</a>
-    <a [hidden]="show" href="#" style="color: white" (click)="logOut()">log out</a>
-  </div>
-  <!-- <div class="grid-container"> -->
-
-    <!-- <div class="col-md-4">
-      <div class="thumbnail">
-        <a href="/w3images/lights.jpg">
-          <img src="/Users/MENAD/Desktop/Screen Shot 2018-12-21 at 9.06.49 PM.png" alt="Lights" style="width:100%">
-          <div class="caption">
-            <p>Lorem ipsum...</p>
-          </div>
-        </a>
-      </div>
+  <header>
+    <div class="title">
+      <p style="color: white">GameSeeds</p>
     </div>
 
-    <div class="col-md-4">
-        <div class="thumbnail">
-          <a href="/w3images/lights.jpg">
-            <img src="/Users/MENAD/Desktop/Screen Shot 2018-12-21 at 9.06.49 PM.png" alt="Lights" style="width:100%">
-            <div class="caption">
-              <p>Lorem ipsum...</p>
-            </div>
-          </a>
-        </div>
-      </div>
-      <div class="col-md-4">
-          <div class="thumbnail">
-            <a href="/w3images/lights.jpg">
-              <img src="/Users/MENAD/Desktop/Screen Shot 2018-12-21 at 9.06.49 PM.png" alt="Lights" style="width:100%">
-              <div class="caption">
-                <p>Lorem ipsum...</p>
-              </div>
-            </a>
-          </div>
-        </div>
-        <div class="col-md-4">
-            <div class="thumbnail">
-              <a href="/w3images/lights.jpg">
-                <img src="/Users/MENAD/Desktop/Screen Shot 2018-12-21 at 9.06.49 PM.png" alt="Lights" style="width:100%">
-                <div class="caption">
-                  <p>Lorem ipsum...</p>
-                </div>
-              </a>
-            </div>
-          </div>
-          <div class="col-md-4">
-              <div class="thumbnail">
-                <a href="/w3images/lights.jpg">
-                  <img src="/Users/MENAD/Desktop/Screen Shot 2018-12-21 at 9.06.49 PM.png" alt="Lights" style="width:100%">
-                  <div class="caption">
-                    <p>Lorem ipsum...</p>
-                  </div>
-                </a>
-              </div>
-            </div>
-            <div class="col-md-4">
-                <div class="thumbnail">
-                    <img src="assets/Screen Shot 2018-12-21 at 9.06.49 PM.png" alt="Lights" style="width:100%;height:100%" >
-                    <div class="caption">
-                      <p>Lorem ipsum...</p>
-                    </div>
-                
-                </div>
-              </div>
-    <div class="grid-item">7</div>
-    <div class="grid-item">8</div>
-    <div class="grid-item">9</div>
-    <div class="grid-item">1</div>
-    <div class="grid-item">2</div>
-    <div class="grid-item">3</div>
-    <div class="grid-item">4</div>
-    <div class="grid-item">5</div>
-    <div class="grid-item">6</div>
-    <div class="grid-item">7</div>
-    <div class="grid-item">8</div>
-    <div class="grid-item">9</div>
-  </div> -->
- 
+    <div class="searchform">
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Enter your key word" aria-label="Search" style="margin:5px;">
+        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+      </form>
+    </div>
+
+    <div class="home">
+      <a href="#" style="color: white">Home</a>
+    </div>
+    <div class="signUp">
+      <a *ngIf="show" href="#" style="color: white" (click)="singUp()">Sign up</a>
+      <app-login-drop-down id="logindropdown" [hidden]="show"></app-login-drop-down>
+    </div>
+    <div class="login">
+      <a *ngIf="show" href="#" style="color: white" (click)="openLogin()">login</a>
+      <a [hidden]="show" href="#" style="color: white" (click)="logOut()">log out</a>
+    </div>
+  </header>
+
+
+
+  <div class="container">
+      <p>test</p>
+      <mat-grid-list cols="1" rowHeight="3:2" style="width: 100%">
+          <mat-grid-tile (click)="test()"><img src="../assets/rockPaperScissor.png" style="width:70%"></mat-grid-tile>
+          <mat-grid-tile>1</mat-grid-tile>
+          <mat-grid-tile>2</mat-grid-tile>
+          <mat-grid-tile>4</mat-grid-tile>
+          <mat-grid-tile>1</mat-grid-tile>
+          <mat-grid-tile>2</mat-grid-tile>
+          <mat-grid-tile>3</mat-grid-tile>
+          <mat-grid-tile>4</mat-grid-tile>
+        </mat-grid-list>
+        <p>test</p>
+    </div>
+
+
 </body>

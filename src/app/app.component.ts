@@ -3,6 +3,7 @@ import {MatDialog, MatDialogConfig} from "@angular/material";
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { ShareUserService } from './DataShareServices/ShareUserService';
+import { GameComponent } from './game/game.component';
 
 @Component({
   selector: 'app-root',
@@ -75,6 +76,15 @@ export class AppComponent{
     window.location.reload();
   }
 
+  test(){
+    const config = new MatDialogConfig();
+    config.disableClose= false;
+    config.autoFocus=true;
+    config.hasBackdrop=true;
+    config.width = "1400px";
+    config.height="1600px";
+    this.dialog.open(GameComponent);
+  }
   
 }
 

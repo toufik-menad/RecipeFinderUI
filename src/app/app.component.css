@@ -1,3 +1,8 @@
+mat-grid-tile {
+  background: transparent;
+}  
+  
+  
   .title {
     background-color: black;
     opacity: 0.85;
@@ -336,3 +341,10 @@
   font-size: 30px;
   text-align: center;
 }
+
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
