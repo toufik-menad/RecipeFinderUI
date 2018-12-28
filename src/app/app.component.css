@@ -8,8 +8,11 @@ mat-grid-tile {
     opacity: 0.85;
     float: left;
     width: 20%;
+    align-content: center;
     text-align: center;
     height: 108px;
+    padding-top: 35px;
+    top: auto;
   }
 
   .home,
@@ -347,4 +350,3 @@ mat-grid-tile {
   display: flex;
   flex-direction: row;
 }
-

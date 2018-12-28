@@ -6,7 +6,15 @@ import {MatCardModule} from '@angular/material/card';
   templateUrl: './game.component.html',
   styleUrls: ['./game.component.css']
 })
-export class GameComponent  {
+export class GameComponent implements OnInit {
+
+  primary: string="red";
+  secondary: string="yellow";
+  user: string;
+  ngOnInit(): void {
+    this.user = localStorage.getItem("user");
+  }
+  
   scores = [0 , 0];
   weapons = [
     'rock',

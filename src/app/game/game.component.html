@@ -1,27 +1,28 @@
 <html>
-<mat-toolbar color="primary">
-  Rock Paper Scissors
-</mat-toolbar>
+<mat-toolbar color={{primary}} style="font-size: 20px">لعبة ورقة حجرة مقص</mat-toolbar>
+<mat-toolbar color={{secondary}} style="font-size: 12px">
+    Rock Paper Scissors   
+  </mat-toolbar>
 
 <div class="content">
   <mat-card>
     <mat-card-content>
       <div class="content1">
-        <h2> You</h2>
+        <h4 style="color:orange;"> {{user}} انت</h4>
         <button mat-fab color="primary" class="score">{{ scores[0] }}</button>
       </div>
-      <h3> Choose your weapon: </h3>
+      <h3> اختر سلاحك </h3>
       <div class="content2">
-        <i (click)="pick(0)" [ngClass]="{'selectedWeapon':(playerSelected === 0)}" class="fa fa-hand-rock-o"></i>
-        <i (click)="pick(1)" [ngClass]="{'selectedWeapon':(playerSelected === 1)}" class="fa fa-hand-paper-o"></i>
-        <i (click)="pick(2)" [ngClass]="{'selectedWeapon':(playerSelected === 2)}" class="fa fa-hand-scissors-o"></i>
+        <i (click)="pick(0)" [ngClass]="{'selectedWeapon':(playerSelected === 0)}"><img src="../assets/RockPaperAssets/rock.jpg" style="width:100%; border: 3px solid orange"></i>
+        <i (click)="pick(1)" [ngClass]="{'selectedWeapon':(playerSelected === 1)}"><img src="../assets/RockPaperAssets/paper.jpg" style="width:100%; border: 3px solid orange"></i>
+        <i (click)="pick(2)" [ngClass]="{'selectedWeapon':(playerSelected === 2)}"><img src="../assets/RockPaperAssets/cissors.jpg" style="width:100%; border: 3px solid orange"></i>
       </div>
     </mat-card-content>
   </mat-card>
   <mat-card>
     <mat-card-content>
       <div class="content1">
-        <h2> لاعب Player</h2>
+        <h2>اللاعب الخصم</h2>
         <button mat-fab color="accent" class="score">{{ scores[1] }}</button>
 
       </div>

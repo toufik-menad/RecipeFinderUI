@@ -83,7 +83,11 @@ export class AppComponent{
     config.hasBackdrop=true;
     config.width = "1400px";
     config.height="1600px";
+    if(localStorage.getItem("token")!==null){
     this.dialog.open(GameComponent);
+    }else{
+      this.openLogin();
+    }
   }
   
 }
