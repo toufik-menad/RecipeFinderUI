@@ -15,7 +15,7 @@ import { LoginDropDownComponent } from './login-drop-down/login-drop-down.compon
 import { RegistrationComponent } from './registration/registration.component';
 import { ShareUserService } from './DataShareServices/ShareUserService';
 import { User } from './Models/User';
-import { GameComponent } from './game/game.component';
+import { GameComponent } from './games/rockpapercissors/game.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import {
   MatAutocompleteModule,
@@ -54,6 +54,7 @@ import {
   MatTreeModule,
 } from '@angular/material';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SimonComponent } from './games/simon/simon.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     LoginDropDownComponent,
     RegistrationComponent,
     GameComponent,
-    LoginDropDownComponent
+    LoginDropDownComponent,
+    SimonComponent
   ],
   imports: [
     BrowserModule,

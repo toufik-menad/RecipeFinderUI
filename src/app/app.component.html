@@ -3,7 +3,7 @@
 </head>
 
 <body>
-  <header>
+  <header class="navbar">
     <div class="title">
       <p style="color: white">All For Kids</p>
     </div>
@@ -28,22 +28,20 @@
     </div>
   </header>
 
-
-
-  <div class="container">
-      <p>test</p>
-      <mat-grid-list cols="2" rowHeight="3:2" style="width: 100%">
-          <mat-grid-tile (click)="test()"><img src="../assets/RockPaperAssets/cover.png" style="width:35%; border: 3px solid orange"></mat-grid-tile>
-          <mat-grid-tile>1</mat-grid-tile>
-          <mat-grid-tile>2</mat-grid-tile>
-          <mat-grid-tile>4</mat-grid-tile>
-          <mat-grid-tile>1</mat-grid-tile>
-          <mat-grid-tile>2</mat-grid-tile>
-          <mat-grid-tile>3</mat-grid-tile>
-          <mat-grid-tile>4</mat-grid-tile>
-        </mat-grid-list>
-        <p>test</p>
+  <div id="container">
+    <div id="left">
+       <p style="color: black">am a siebar</p>
     </div>
-
-
+    <div id="right">
+      <button class="button" (click)="openPapercissor()" style="background-image: url(../assets/RockPaperAssets/rockpapercissors.svg)"></button>
+      <span></span>
+      <button class="button" (click)="openPapercissor()" style="background-image: url(../assets/simonAssets/cover.svg)"></button>
+      <button class="button" (click)="openPapercissor()" style="background-image: url(../assets/RockPaperAssets/rockpapercissors.svg)"></button>
+      <button class="button" (click)="openPapercissor()" style="background-image: url(../assets/simonAssets/cover.svg)"></button>
+      <button class="button" (click)="openPapercissor()" style="background-image: url(../assets/RockPaperAssets/rockpapercissors.svg)"></button>
+      <button class="button" (click)="openPapercissor()" style="background-image: url(../assets/simonAssets/cover.svg)"></button>
+      <button class="button" (click)="openPapercissor()" style="background-image: url(../assets/RockPaperAssets/rockpapercissors.svg)"></button>
+      <button class="button" (click)="openPapercissor()" style="background-image: url(../assets/simonAssets/cover.svg)"></button>
+    </div>
+  </div>
 </body>

@@ -1,95 +1,87 @@
-import { Component, OnInit } from '@angular/core';
-import {MatDialog, MatDialogConfig} from "@angular/material";
+import { Component, OnInit, Input, ComponentFactoryResolver, ViewContainerRef } from '@angular/core';
+import { MatDialog, MatDialogConfig } from "@angular/material";
 import { LoginComponent } from './login/login.component';
 import { RegistrationComponent } from './registration/registration.component';
 import { ShareUserService } from './DataShareServices/ShareUserService';
-import { GameComponent } from './game/game.component';
+import { AuthenticationService } from './services/AuthenticationService'
+import { GameComponent } from './games/rockpapercissors/game.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent{
+export class AppComponent {
   
   title = 'RecipeFinderUI';
   show: boolean;
+  gameName: string = "GameComponent";
+
   
 
-
-  constructor(private dialog: MatDialog, private shareUserService:ShareUserService) {
-    this.shareUserService.currentUiState.subscribe(message =>{
-      if(message===true){
+  constructor(private dialog: MatDialog, private shareUserService: ShareUserService, private authenticationService: AuthenticationService, private componentFactoryResolver: ComponentFactoryResolver) {
+    this.shareUserService.currentUiState.subscribe(message => {
+      if (message === true) {
         console.log(message);
         window.location.reload();
       }
     })
   }
 
-  ngOnInit(){
-    if(localStorage.getItem("user")){
-      this.show=false;
-    }else{
-      this.show=true;
+  ngOnInit() {
+    if (localStorage.getItem("user")) {
+      this.show = false;
+    } else {
+      this.show = true;
     }
   }
 
-    openDialog() {
 
-        const dialogConfig = new MatDialogConfig();
-
-        dialogConfig.disableClose = true;
-        dialogConfig.autoFocus = true;
-
-        //this.dialog.open(LoginComponent, dialogConfig);
-    }
-
-
-  singUp(){
+  singUp() {
     const config = new MatDialogConfig();
-    config.disableClose= false;
-    config.autoFocus=true;
-    config.hasBackdrop=true;
+    config.disableClose = false;
+    config.autoFocus = true;
+    config.hasBackdrop = true;
     config.width = "400px";
-    config.height="600px";
+    config.height = "600px";
     this.dialog.open(RegistrationComponent);
     console.log("openlogin function ....")
     console.log("singUp()");
   }
 
-  openLogin() {
+  openLogin(): void {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     const config = new MatDialogConfig();
-    config.disableClose= false;
-    config.autoFocus=true;
-    config.hasBackdrop=true;
+    config.disableClose = false;
+    config.autoFocus = true;
+    config.hasBackdrop = true;
     config.width = "400px";
-    config.height="600px";
+    config.height = "600px";
     this.dialog.open(LoginComponent);
     console.log("openlogin function ....")
   }
 
-  logOut(){
+  logOut(): void {
     localStorage.removeItem("token");
     localStorage.removeItem("user");
     window.location.reload();
   }
 
-  test(){
+  openPapercissor(): void {
     const config = new MatDialogConfig();
-    config.disableClose= false;
-    config.autoFocus=true;
-    config.hasBackdrop=true;
+    config.disableClose = false;
+    config.autoFocus = true;
+    config.hasBackdrop = true;
     config.width = "1400px";
-    config.height="1600px";
-    if(localStorage.getItem("token")!==null){
-    this.dialog.open(GameComponent);
-    }else{
+    config.height = "1600px";
+    if (this.authenticationService.checkForToken()) {
+      this.dialog.open(GameComponent);
+    } else {
       this.openLogin();
     }
   }
-  
+
 }
 
 

@@ -13,9 +13,9 @@
       </div>
       <h3> اختر سلاحك </h3>
       <div class="content2">
-        <i (click)="pick(0)" [ngClass]="{'selectedWeapon':(playerSelected === 0)}"><img src="../assets/RockPaperAssets/rock.jpg" style="width:100%; border: 3px solid orange"></i>
-        <i (click)="pick(1)" [ngClass]="{'selectedWeapon':(playerSelected === 1)}"><img src="../assets/RockPaperAssets/paper.jpg" style="width:100%; border: 3px solid orange"></i>
-        <i (click)="pick(2)" [ngClass]="{'selectedWeapon':(playerSelected === 2)}"><img src="../assets/RockPaperAssets/cissors.jpg" style="width:100%; border: 3px solid orange"></i>
+        <i (click)="pick(0);playAudio()" [ngClass]="{'selectedWeapon':(playerSelected === 0)}"><img src="../assets/RockPaperAssets/cissors.svg" style="width:120%; border: 3px solid orange"></i>
+        <i (click)="pick(1)" [ngClass]="{'selectedWeapon':(playerSelected === 1)}"><img src="../assets/RockPaperAssets/paper.svg" style="width:120%; border: 3px solid orange"></i>
+        <i (click)="pick(2)" [ngClass]="{'selectedWeapon':(playerSelected === 2)}"><img src="../assets/RockPaperAssets/rock.svg" style="width:120%; border: 3px solid orange"></i>
       </div>
     </mat-card-content>
   </mat-card>

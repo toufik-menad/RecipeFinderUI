@@ -18,7 +18,7 @@
     <label for="exampleInputPassword1">Confirm Password</label>
     <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm Your Password" name="rePassword" [(ngModel)]="userEntity.rePassword">
   </div>
-  <button type="submit" class="btn btn-primary" (click)="RegisterNewUser(DataForm.value)" style="float: left">Register</button>
+  <button type="submit" class="btn btn-primary" #RegistrationComponent (click)="RegisterNewUser(DataForm.value,RegistrationComponent.value)" style="float: left">Register</button>
 
   <button type="submit" class="btn btn-primary" (click)="closeRegistrationForm()" style="float: right">Cancel</button>
 </form>
