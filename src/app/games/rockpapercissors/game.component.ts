@@ -85,7 +85,7 @@ export class GameComponent implements OnInit {
  }
 
  playAudio(): void{
-   let audio = new Audio("../assets/audiofiles/test.m4a");
+   let audio = new Audio("../assets/audiofiles/test.aifc");
    audio.play();
  }
 
