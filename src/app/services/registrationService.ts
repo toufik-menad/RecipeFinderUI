@@ -5,7 +5,7 @@ import { Http, Headers, RequestOptions } from '@angular/http';
 @Injectable()
 
 export class RegistrationService {
-  private url: string = "http://localhost:8082/register";
+  private url: string = "http://206.189.71.170:8082/register";
 
   constructor(private http: HttpClient){}
 
