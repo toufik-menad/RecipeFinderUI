@@ -55,6 +55,7 @@ import {
 } from '@angular/material';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SimonComponent } from './games/simon/simon.component';
+import { DandDComponent } from './games/dand-d/dand-d.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +67,8 @@ import { SimonComponent } from './games/simon/simon.component';
     RegistrationComponent,
     GameComponent,
     LoginDropDownComponent,
-    SimonComponent
+    SimonComponent,
+    DandDComponent
   ],
   imports: [
     BrowserModule,
@@ -125,6 +127,6 @@ import { SimonComponent } from './games/simon/simon.component';
   ],
   providers: [AuthenticationService, ShareUserService, User, RegistrationService],
   bootstrap: [AppComponent],
-  entryComponents: [LoginComponent, RegistrationComponent, GameComponent]
+  entryComponents: [LoginComponent, RegistrationComponent, GameComponent,DandDComponent]
 })
 export class AppModule { }

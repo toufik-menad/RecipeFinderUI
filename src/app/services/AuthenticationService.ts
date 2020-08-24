@@ -6,7 +6,7 @@ import { MatDialog, MatDialogConfig } from '@angular/material';
 
 @Injectable()
 export class AuthenticationService {
-  private url: string = "http://142.93.145.55:8080/login";
+  private url: string = "http://localhost:8082/login";
   userEntity: User = new User();
 
   constructor(private http: HttpClient, private shareUserService: ShareUserService, private dialog: MatDialog, private componentFactory: ComponentFactoryResolver) {

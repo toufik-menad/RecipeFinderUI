@@ -5,6 +5,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { ShareUserService } from './DataShareServices/ShareUserService';
 import { AuthenticationService } from './services/AuthenticationService'
 import { GameComponent } from './games/rockpapercissors/game.component';
+import { DandDComponent } from './games/dand-d/dand-d.component';
 
 @Component({
   selector: 'app-root',
@@ -81,6 +82,22 @@ export class AppComponent {
       this.openLogin();
     }
   }
+
+
+  openDandD(): void {
+    const config = new MatDialogConfig();
+    config.disableClose = false;
+    config.autoFocus = true;
+    config.hasBackdrop = true;
+    config.width = "1400px";
+    config.height = "1600px";
+    if (this.authenticationService.checkForToken()) {
+      this.dialog.open(DandDComponent);
+    } else {
+      this.openLogin();
+    }
+  }
+
 
 }
 
